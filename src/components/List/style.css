@@ -1,0 +1,58 @@
+@media (min-width: 320px) {
+
+    .cardList {
+        display: flex;
+        width: 100vw;
+        min-height: 20%;
+        margin: 0;
+        justify-content: content;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .header-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 90%;
+
+    }
+
+    h3 {
+        display: none;
+        margin: 10px;
+        font-size: 20px;
+    }
+
+    button {
+        margin: 5px;
+        width: 25%;
+    }
+
+    .btn-gray {
+        border: none;
+        color: gray;
+        background: #E9ECEF;
+    }
+
+}
+
+@media (min-width: 800px) {
+
+    .cardList {
+        width: 50vw;
+    }
+
+    .header-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    h3 {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 60%;
+    }
+}
