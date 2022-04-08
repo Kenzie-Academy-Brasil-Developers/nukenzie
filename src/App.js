@@ -1,18 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 import Form from './components/Form'
 import List from './components/List'
 import NuKenzie from './img/NuKenzie.svg'
 
-
 function App() {
 
   const [listTransactions, setTransactions] = useState([]);
 
   function deleteCard(id) {
-    const newList = listTransactions.filter((element) => element.id !== id);
-    setTransactions(newList);
+  
+    console.log(listTransactions)
+    console.log(id)
+    // const newList = listTransactions.splice(id, 1,'')
+    const newList = listTransactions.filter((element) => element.id != id)
+    console.log(newList);
+    setTransactions([...newList]);
   }
 
   return (

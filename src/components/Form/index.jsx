@@ -1,17 +1,17 @@
 import "./style.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Form({ currentList, newSet }) {
   const [totalPrice, setTotalPrice] = useState(0);
+  const [newValue, setNewValue] = useState({});
 
-  function dataForm() {
+  useEffect(() => {
     const listPrice = currentList.reduce(
       (previousValue, currentValue) => previousValue + currentValue.value,
       0
     );
     setTotalPrice(listPrice);
-  }
-  const [newValue, setNewValue] = useState({value: 0});
+    }, [currentList]);
 
   return (
     <div>
@@ -19,7 +19,7 @@ export default function Form({ currentList, newSet }) {
         <form
           onSubmit={(event) => {
             event.preventDefault();
-            dataForm();
+            setNewValue({ ...newValue, id: currentList.length + 1 });
           }}
         >
           <div className="primeira-div">
@@ -28,7 +28,10 @@ export default function Form({ currentList, newSet }) {
               <input
                 type="text"
                 onChange={(event) =>
-                  setNewValue({ ...newValue, description: event.target.value || 'Sem descrição' })
+                  setNewValue({
+                    ...newValue,
+                    description: event.target.value || "Sem descrição",
+                  })
                 }
                 className="description"
                 placeholder="Digite aqui sua descrição"
@@ -78,7 +81,7 @@ export default function Form({ currentList, newSet }) {
 
         <div className="totalPrice">
           <p>
-            Valor total:{" "}
+            Valor total:
             <span className="form-total-price"> R$ {totalPrice},00</span>
           </p>
 

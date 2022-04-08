@@ -3,7 +3,6 @@ import "./style.css";
 
 export default function List({ lista, deleteCard }) {
 
-  if (lista.length > 0) {
     return (
       <div className="cardList">
         <div className="header-list">
@@ -24,5 +23,5 @@ export default function List({ lista, deleteCard }) {
         ))}
       </div>
     );
-  }
+  
 }
