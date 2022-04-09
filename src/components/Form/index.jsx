@@ -1,7 +1,7 @@
 import "./style.css";
 import { useState, useEffect } from "react";
 
-export default function Form({ currentList, newSet }) {
+export default function Form({ currentList, newSet, funcaoData }) {
   const [totalPrice, setTotalPrice] = useState(0);
   const [newValue, setNewValue] = useState({});
 
@@ -18,7 +18,8 @@ export default function Form({ currentList, newSet }) {
         <form
           onSubmit={(event) => {
             event.preventDefault();
-            setNewValue({ ...newValue, id: currentList.length + 1 });
+            setNewValue({ ...newValue, id: currentList.length + 1 })
+          
           }}
         >
           <div className="primeira-div">
@@ -70,7 +71,10 @@ export default function Form({ currentList, newSet }) {
           <button
             className="submit"
             type="submit"
-            onClick={() => newSet([...currentList, newValue])}
+            onClick={() => {
+              newSet([...currentList, newValue])
+              funcaoData([...currentList, newValue])
+            }}
           >
             Inserir Valor
           </button>

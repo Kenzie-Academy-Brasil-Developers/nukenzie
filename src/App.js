@@ -7,10 +7,14 @@ import NuKenzie from './img/NuKenzie.svg'
 function App() {
 
   const [listTransactions, setTransactions] = useState([]);
-
+  const [dataCard, setDataCards] = useState([]);
+  const [cardPositive, setCardPositive] = useState([]);
+  const [cardNegative, setCardNegative] = useState([]);
+  
   function deleteCard(id) {
     const newList = listTransactions.filter((element) => element.id != id)
     setTransactions([...newList]);
+    setDataCards([...newList]);
   }
 
   return (
@@ -21,8 +25,15 @@ function App() {
       </header>
 
       <div className="App-content">
-        <Form currentList={listTransactions} newSet={setTransactions} />
-        <List lista={listTransactions} deleteCard={deleteCard} funcao={setTransactions} />
+        <Form currentList={listTransactions} 
+        newSet={setTransactions} 
+        funcaoData={setDataCards}/>
+
+        <List lista={listTransactions} 
+        deleteCard={deleteCard} 
+        funcao={setTransactions}
+        data={dataCard}
+        />
       </div>
     </div>
   );
