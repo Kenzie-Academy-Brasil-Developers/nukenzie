@@ -1,15 +1,38 @@
 import NoCard from "./img/NoCard.svg";
 import Card from "../../../src/components/Card/index.jsx";
 import "./style.css";
+import { useState } from "react";
 
 export default function List({ lista, deleteCard, funcao }) {
+  
+  const [cards, setCards] = useState([]);
+  const [cardPositive, setCardPositive] = useState([]);
+  const [cardNegative, setCardNegative] = useState([]);
+
   function filterButtons(value) {
     console.log(lista);
     console.log(value);
     const filterButton = lista.filter((element) => {
-      return element.type === value;
-    });
+      return element.type === value
+    })
+    
+    if(value === 'Entrada'){ funcao(cardPositive)}
+    if(value === 'Despesa'){ funcao(cardNegative)}
+    if(value === 'Todos'){ funcao(lista)}
+    console.log(filterButton);
+    setCards(filterButton);
     funcao(filterButton);
+
+    // filterButton.forEach((element, index) => (
+    //   <Card
+    //     description={element.description}
+    //     type={element.type}
+    //     value={element.value}
+    //     key={index}
+    //     id={element.id}
+    //     deleteCard={deleteCard}
+    //   />
+    // ));
   }
 
   return (
@@ -37,19 +60,19 @@ export default function List({ lista, deleteCard, funcao }) {
             <img className="card-vazio" src={NoCard} />
             <img className="card-vazio" src={NoCard} />
             <img className="card-vazio" src={NoCard} />
-          </div> 
-          ):(
-           lista.map((element, index) => (
-              <Card
-                description={element.description}
-                type={element.type}
-                value={element.value}
-                key={index}
-                id={element.id}
-                deleteCard={deleteCard}
-              />
-            ))
-          )}
+          </div>
+        ) : (
+          lista.map((element, index) => (
+            <Card
+              description={element.description}
+              type={element.type}
+              value={element.value}
+              key={index}
+              id={element.id}
+              deleteCard={deleteCard}
+            />
+          ))
+        )}
       </div>
     </div>
   );
