@@ -9,12 +9,7 @@ function App() {
   const [listTransactions, setTransactions] = useState([]);
 
   function deleteCard(id) {
-  
-    console.log(listTransactions)
-    console.log(id)
-    // const newList = listTransactions.splice(id, 1,'')
     const newList = listTransactions.filter((element) => element.id != id)
-    console.log(newList);
     setTransactions([...newList]);
   }
 
@@ -27,7 +22,7 @@ function App() {
 
       <div className="App-content">
         <Form currentList={listTransactions} newSet={setTransactions} />
-        <List lista={listTransactions} deleteCard={deleteCard} />
+        <List lista={listTransactions} deleteCard={deleteCard} funcao={setTransactions} />
       </div>
     </div>
   );

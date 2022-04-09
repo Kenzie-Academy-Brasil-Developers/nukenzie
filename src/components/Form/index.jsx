@@ -7,10 +7,9 @@ export default function Form({ currentList, newSet }) {
 
   useEffect(() => {
     const listPrice = currentList.reduce(
-      (previousValue, currentValue) => previousValue + currentValue.value,
-      0
-    );
-    setTotalPrice(listPrice);
+      (previousValue, currentValue) => previousValue + currentValue.value, 0);
+    console.log(listPrice);
+    setTotalPrice(listPrice || 0);
     }, [currentList]);
 
   return (
@@ -30,8 +29,7 @@ export default function Form({ currentList, newSet }) {
                 onChange={(event) =>
                   setNewValue({
                     ...newValue,
-                    description: event.target.value || "Sem descrição",
-                  })
+                    description: event.target.value})
                 }
                 className="description"
                 placeholder="Digite aqui sua descrição"
@@ -48,7 +46,7 @@ export default function Form({ currentList, newSet }) {
                 onChange={(event) =>
                   setNewValue({
                     ...newValue,
-                    value: Number(event.target.value),
+                    value: Number(event.target.value)
                   })
                 }
                 className="price"
@@ -60,10 +58,9 @@ export default function Form({ currentList, newSet }) {
               <label>Tipo de valor</label>
               <select
                 onChange={(event) =>
-                  setNewValue({ ...newValue, type: event.target.value })
-                }
+                  setNewValue({ ...newValue, type: event.target.value })}
               >
-                <option>Selecione</option>
+                <option value="Sem descrição">Selecione</option>
                 <option value="Entrada"> Entrada </option>
                 <option value="Despesa"> Despesa </option>
               </select>

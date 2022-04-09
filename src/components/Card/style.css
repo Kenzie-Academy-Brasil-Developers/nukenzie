@@ -2,15 +2,15 @@
 
     .Card {
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: flex-start;
         flex-direction: column;
         width: 80%;
-        height: 87px;
+        height: 30px;
         color: rgba(33, 37, 41, 1);
 
         /* grey-1 */
-        margin: 20px 0px;
+        margin: 2% 5%;
         background: #F8F9FA;
         border-radius: 4px;
         padding: 5%;
@@ -74,7 +74,6 @@
     .trash{
         color: gray;
         padding: 5px;
-        background-color: lightgray;
 
         border-radius: 2.46154px;
     }

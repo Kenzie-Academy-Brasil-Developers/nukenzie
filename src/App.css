@@ -9,15 +9,13 @@
 
   .App-header {
 
-    min-height: 20vh;
+    min-height: 14vh;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     color: white;
     width: 100vw;
-
-    height: 50%;
     background: #F8F9FA;
     box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.25);
     margin-bottom: 5vh;
@@ -33,7 +31,7 @@
     margin-right: 13vw;
     color: gray;
     background: #E9ECEF;
-    width: 5%;
+    width: 100px;
     border: 1.4px solid #E9ECEF;
     box-sizing: border-box;
     border-radius: 8px;

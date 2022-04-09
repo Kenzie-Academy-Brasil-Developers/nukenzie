@@ -1,5 +1,29 @@
 @media (min-width: 320px) {
+    
+    .sem-lancamentos {
 
+        /* identical to box height, or 155% */
+        margin: 5%;
+        width: 80%;
+        
+        /* grey-3 */
+        
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        font-family: 'Nunito', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 22px;
+        color: #5B6166;
+        line-height: 34px;
+    }
+    
+    .card-vazio {
+       width: 90%;
+       margin: 2% 5%;
+    }
+    
     .cardList {
         display: flex;
         width: 100vw;
@@ -34,9 +58,41 @@
         border: none;
         color: gray;
         background: #E9ECEF;
+        width: 30%;
     }
 
+    .space-cards {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+
+
 }
+
+@media (min-width: 400px) {
+    .sem-lancamentos {
+        margin: 5%;
+    }
+
+    .card-vazio1 {
+
+        height: 10px;
+        background: #E9ECEF;
+        margin-left: 10%;
+    }
+
+    .card-vazio2 {
+
+        height: 10px;
+        margin-left: 10%;
+
+    }
+}
+
 
 @media (min-width: 800px) {
 
@@ -53,6 +109,14 @@
     h3 {
         display: flex;
         flex-wrap: nowrap;
-        width: 60%;
+        width: 50%;
     }
+
+    button {
+        margin: 5px;
+        width: 25%;
+        height: 50px;
+    }
+
+
 }
