@@ -7,7 +7,7 @@
         justify-content: space-around;
         align-items: flex-start;
         flex-direction: column;
-        width: 100%;
+        width: 90%;
         height: 40px;
         color: rgba(33, 37, 41, 1);
 
@@ -15,7 +15,8 @@
         margin: 2% 0;
         background: #F8F9FA;
         border-radius: 10px;
-        padding: 5%;
+        padding: 3.5%;
+        
     }
 
     .Entrada{
@@ -24,7 +25,7 @@
         justify-content: space-around;
         align-items: flex-start;
         flex-direction: column;
-        width: 100%;
+        width: 90%;
         height: 40px;
         color: rgba(33, 37, 41, 1);
 
@@ -32,7 +33,7 @@
         margin: 2% 0;
         background: #F8F9FA;
         border-radius: 10px;
-        padding: 5%;
+        padding: 3.5%;
     }
 
     .card-title {
@@ -71,7 +72,7 @@
         /* Body */
         font-family: 'Nunito', 'sans';
         font-style: normal;
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .card-type {
@@ -95,9 +96,8 @@
     .trash{
         margin-left: auto;
         color: gray;
-        padding: 4px;
+        padding: 3px;
 
-        border-radius: 2.46154px;
     }
 
     .card-trash {
@@ -106,6 +106,14 @@
 }
 
 @media (min-width: 435px) {
+
+    .Entrada {
+        width: 100%
+    }
+
+    .Despesa {
+        width: 100%
+    }
 
     .cardList{
         justify-content: center;
@@ -135,22 +143,41 @@
     }
 }
 
-@media (min-width: 840px) {
+@media (min-width: 800px) {
 
-    .Card {
-        width: 90%
+    .header-list{
+        width: 90%;
     }
-    
+
     .cardList{
         justify-content: center;
         width: 90%;
     }
 
-    .card{
-        width: 90%;
+    .Entrada {
+        width: 90%
+    }
+
+    .Despesa {
+        width: 90%
     }
 
     .space-cards{
         width: 80%;
+    }
+}
+
+@media (min-width: 1020px) {
+
+    .header-list{
+        width: 70%;
+    }
+
+    .Entrada {
+        width: 90%
+    }
+
+    .Despesa {
+        width: 90%
     }
 }
