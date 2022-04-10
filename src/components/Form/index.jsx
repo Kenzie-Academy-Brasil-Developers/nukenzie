@@ -7,10 +7,9 @@ export default function Form({ currentList, newSet, funcaoData }) {
 
   useEffect(() => {
     const listPrice = currentList.reduce(
-      (previousValue, currentValue) => previousValue + currentValue.value, 0);
-    console.log(listPrice);
+      (previousValue, currentValue) => currentValue.type === "Despesa" ? previousValue - currentValue.value : previousValue + currentValue.value, 0)
     setTotalPrice(listPrice || 0);
-    }, [currentList]);
+  }, [currentList]);
 
   return (
     <div>
@@ -18,8 +17,7 @@ export default function Form({ currentList, newSet, funcaoData }) {
         <form
           onSubmit={(event) => {
             event.preventDefault();
-            setNewValue({ ...newValue, id: currentList.length + 1 })
-          
+            setNewValue({ ...newValue, id: currentList.length + 1 });
           }}
         >
           <div className="primeira-div">
@@ -30,7 +28,8 @@ export default function Form({ currentList, newSet, funcaoData }) {
                 onChange={(event) =>
                   setNewValue({
                     ...newValue,
-                    description: event.target.value})
+                    description: event.target.value,
+                  })
                 }
                 className="description"
                 placeholder="Digite aqui sua descrição"
@@ -44,12 +43,11 @@ export default function Form({ currentList, newSet, funcaoData }) {
               <label>Valor</label>
               <input
                 type="number"
-                onChange={(event) =>
-                  setNewValue({
-                    ...newValue,
-                    value: Number(event.target.value)
-                  })
+                onChange={(event) =>{
+                  console.log(event.target.value);
+                  setNewValue({...newValue, value: Number(event.target.value),})
                 }
+              }
                 className="price"
                 placeholder="1 R$"
               />
@@ -59,7 +57,8 @@ export default function Form({ currentList, newSet, funcaoData }) {
               <label>Tipo de valor</label>
               <select
                 onChange={(event) =>
-                  setNewValue({ ...newValue, type: event.target.value })}
+                  setNewValue({ ...newValue, type: event.target.value })
+                }
               >
                 <option value="Sem descrição">Selecione</option>
                 <option value="Entrada"> Entrada </option>
@@ -71,9 +70,9 @@ export default function Form({ currentList, newSet, funcaoData }) {
           <button
             className="submit"
             type="submit"
-            onClick={() => {
-              newSet([...currentList, newValue])
-              funcaoData([...currentList, newValue])
+            onClick={() =>{ 
+              newSet([...currentList, newValue]);
+              funcaoData([...currentList, newValue]);
             }}
           >
             Inserir Valor

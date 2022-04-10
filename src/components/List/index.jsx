@@ -5,15 +5,12 @@ import { useState } from "react";
 
 export default function List({ lista, deleteCard, funcao, data }) {
 
-
   function filterButtons(value) {
     const filterButton = data.filter((element) => {
       return element.type === value;
     });
 
-    value === "Entrada" || value === "Despesa" ? (funcao(filterButton))
-    : (funcao([...data]));
-    
+    value === "Entrada" || value === "Despesa" ? (funcao(filterButton)):(funcao([...data]));
   }
 
   return (
@@ -38,7 +35,6 @@ export default function List({ lista, deleteCard, funcao, data }) {
             <h4 className="sem-lancamentos">
               Você ainda não possui nenhum lançamento
             </h4>
-
             <img className="card-vazio" src={NoCard} />
             <img className="card-vazio" src={NoCard} />
             <img className="card-vazio" src={NoCard} />

@@ -5,14 +5,11 @@ import List from './components/List'
 import NuKenzie from './img/NuKenzie.svg'
 
 function App() {
-
   const [listTransactions, setTransactions] = useState([]);
   const [dataCard, setDataCards] = useState([]);
-  const [cardPositive, setCardPositive] = useState([]);
-  const [cardNegative, setCardNegative] = useState([]);
   
   function deleteCard(id) {
-    const newList = listTransactions.filter((element) => element.id != id)
+    const newList = listTransactions.filter((element) => element.id !== id)
     setTransactions([...newList]);
     setDataCards([...newList]);
   }
@@ -20,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img className="logo" src={NuKenzie} />
+        <img className="logo" src={ NuKenzie } />
         <button className="inicio">Inicio</button>
       </header>
 
