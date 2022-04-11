@@ -7,7 +7,12 @@ export default function Form({ currentList, newSet, funcaoData }) {
 
   useEffect(() => {
     const listPrice = currentList.reduce(
-      (previousValue, currentValue) => currentValue.type === "Despesa" ? previousValue - currentValue.value : previousValue + currentValue.value, 0)
+      (previousValue, currentValue) =>
+        currentValue.type === "Despesa"
+          ? previousValue - currentValue.value
+          : previousValue + currentValue.value,
+      0
+    );
     setTotalPrice(listPrice || 0);
   }, [currentList]);
 
@@ -43,11 +48,13 @@ export default function Form({ currentList, newSet, funcaoData }) {
               <label>Valor</label>
               <input
                 type="number"
-                onChange={(event) =>{
+                onChange={(event) => {
                   console.log(event.target.value);
-                  setNewValue({...newValue, value: Number(event.target.value),})
-                }
-              }
+                  setNewValue({
+                    ...newValue,
+                    value: Number(event.target.value),
+                  });
+                }}
                 className="price"
                 placeholder="1 R$"
               />
@@ -70,11 +77,13 @@ export default function Form({ currentList, newSet, funcaoData }) {
           <button
             className="submit"
             type="submit"
-            onClick={() =>{ 
-              if(newValue.type == "Entrada" || newValue.type == "Despesa"){
-              funcaoData([...currentList, newValue]);
-              newSet([...currentList, newValue])
-            }
+            onClick={() => {
+              if (
+                newValue.type == "Entrada" &&  typeof newValue.value === "number" ||
+                newValue.type == "Despesa" && typeof newValue.value === "number") {
+                funcaoData([...currentList, newValue]);
+                newSet([...currentList, newValue]);
+              }
             }}
           >
             Inserir Valor
