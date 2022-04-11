@@ -71,8 +71,10 @@ export default function Form({ currentList, newSet, funcaoData }) {
             className="submit"
             type="submit"
             onClick={() =>{ 
+              if(newValue.type == "Entrada" || newValue.type == "Despesa"){
               funcaoData([...currentList, newValue]);
-              newSet([...currentList, newValue]);
+              newSet([...currentList, newValue])
+            }
             }}
           >
             Inserir Valor
