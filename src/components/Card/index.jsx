@@ -12,7 +12,7 @@ export default function Card({ description, type, value, deleteCard, id }) {
           <p className="card-value">R$ {value},00 </p>
         )}
         <button onClick={() => deleteCard(id)} className="excluir">
-          {" "}
+         
           <BsFillTrashFill className="trash" size={20} />{" "}
         </button>
       </div>

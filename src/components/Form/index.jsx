@@ -17,7 +17,7 @@ export default function Form({ currentList, newSet, funcaoData }) {
         <form
           onSubmit={(event) => {
             event.preventDefault();
-            setNewValue({ ...newValue, id: currentList.length + 1 });
+            setNewValue({ ...newValue, id: 0 + currentList.length++});
           }}
         >
           <div className="primeira-div">
@@ -71,8 +71,8 @@ export default function Form({ currentList, newSet, funcaoData }) {
             className="submit"
             type="submit"
             onClick={() =>{ 
-              newSet([...currentList, newValue]);
               funcaoData([...currentList, newValue]);
+              newSet([...currentList, newValue]);
             }}
           >
             Inserir Valor

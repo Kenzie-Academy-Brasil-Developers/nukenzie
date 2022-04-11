@@ -9,7 +9,6 @@ export default function List({ lista, deleteCard, funcao, data }) {
     const filterButton = data.filter((element) => {
       return element.type === value;
     });
-
     value === "Entrada" || value === "Despesa" ? (funcao(filterButton)):(funcao([...data]));
   }
 
