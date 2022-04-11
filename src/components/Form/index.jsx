@@ -17,7 +17,7 @@ export default function Form({ currentList, newSet, funcaoData }) {
         <form
           onSubmit={(event) => {
             event.preventDefault();
-            setNewValue({ ...newValue, id: 0 + currentList.length++});
+            setNewValue({ ...newValue, id: currentList.length + 1 || 0 });
           }}
         >
           <div className="primeira-div">
