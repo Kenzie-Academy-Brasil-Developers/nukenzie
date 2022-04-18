@@ -17,6 +17,7 @@ export default function Form({ currentList, newSet, funcaoData }) {
   }, [currentList]);
 
   return (
+    
     <div>
       <div className="father-form">
         <form

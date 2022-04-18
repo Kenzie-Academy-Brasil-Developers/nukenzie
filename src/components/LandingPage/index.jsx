@@ -5,6 +5,9 @@ import landingImagem from "./landingImagem.svg";
 const LandingPage = ({ funcao }) => {
   return (
     <div div className="LandingPage">
+      <div className="landing-imagem">
+          <img className="imagem" src={landingImagem} alt="" />
+      </div>
       <div className="informacoes" >
         <img src={NuKenzie} />
         <h1 className="LandingPage-titulo">
@@ -13,8 +16,6 @@ const LandingPage = ({ funcao }) => {
         <p className="landing-legenda">de forma rápida a segura</p>
         <button className="landing-btn" onClick={() => funcao(true)}>Iniciar</button>
       </div>
-
-      <img className="landing-imagem" src={landingImagem} />
     </div>
   );
 };
