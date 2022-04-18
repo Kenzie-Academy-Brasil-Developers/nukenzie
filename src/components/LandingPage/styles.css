@@ -1,0 +1,115 @@
+@media (min-width: 320px) {
+
+    .LandingPage {
+        display: flex;
+        background: #212529;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .informacoes {
+        justify-items: auto;
+        width: 80%;
+        height: 80%;
+        margin: 20px;
+        position: absolute;
+        opacity: 1;
+    }
+
+    .LandingPage-titulo {
+        width: 90%;
+        height: 144px;
+        left: 256px;
+        top: 264px;
+        margin-top: 30px;
+
+        /* Title1 */
+        font-family: 'Nunito', sans-serif;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 38px;
+        line-height: 48px;
+        /* or 126% */
+
+        color: #FFFFFF;
+        opacity: 1;
+    }
+
+    .landing-imagem {
+        opacity: 0.1;
+        width: 100vw;
+        max-width: 593px;
+        max-height: 593px;
+    }
+
+    .landing-legenda {
+        color: #fff;
+    }
+
+    .landing-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 13px 20px;
+
+        position: absolute;
+        width: 241px;
+        height: 48px;
+
+        /* color-primary */
+
+        background: #FD377E;
+        /* color-primary */
+
+        border: 2px solid #FD377E;
+        box-sizing: border-box;
+        border-radius: 8px;
+        opacity: 1;
+    }
+}
+
+@media (min-width: 700px) {
+
+    .LandingPage-titulo {
+        width: 347px;
+        height: 144px;
+    }
+
+    .informacoes {
+        width: 347px;
+        height: 374px;
+    }
+}
+
+@media (min-width: 900px) {
+
+    .LandingPage {
+        flex-direction: row;
+        justify-content: center;
+
+    }
+
+    .informacoes {
+        width: 30%;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        margin: 0;
+    }
+
+    .landing-imagem {
+        opacity: 1;
+        width: 40%;
+        margin: 0;
+    }
+
+}
+
+.informacoes {}
+
+.LandingPage-titulo {}
